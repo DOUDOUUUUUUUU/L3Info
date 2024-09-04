@@ -20,18 +20,28 @@ def saisie_date_naissance()->d.datetime:
             print("Erreur de saisie\n")
         else:
             saisie_flag = 0
-    return d.datetime(annee, mois, jour, 0, 0, 0, 0)
+    return d.datetime(annee, mois, jour).date()
 
 def age(date_naissance:d.datetime)->int:
-    today = d.datetime.now().date()
-    age = today - date_naissance
-    return age//365
+    today = int(d.datetime.today().date().strftime("%Y"))
+    naissance = int(date_naissance.strftime("%Y"))
+    return today - naissance
+
+def est_majeur(date_naissance:d.date)->bool:
+    today = int(d.datetime.today().date().strftime("%Y"))
+    naissance = int(date_naissance.strftime("%Y"))
+    return (today - naissance) > 18
+
+def test_acces():
+    naissance = saisie_date_naissance()
+    aage = age(naissance)
+    if (est_majeur(naissance)):
+        print("Bonjour, vous avez ",aage,"ans, Acces autorise")
+    else:
+        print("Desole, vous avez ",aage,"ans, acces interdit")
 
 
 
 
 
-
-
-
-print(age(d.date(2012, 12, 12)))
+test_acces()
