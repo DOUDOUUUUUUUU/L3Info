@@ -16,7 +16,7 @@ def saisie_date_naissance()->d.datetime:
         mois = int(input())
         print("Saisissez votre annee de naissance")
         annee = int(input())
-        if not (date_est_valide(jour, mois, annee)):
+        if (not date_est_valide(jour, mois, annee)):
             print("Erreur de saisie\n")
         else:
             saisie_flag = 0
@@ -44,4 +44,4 @@ def test_acces():
 
 
 
-test_acces()
+print(age(saisie_date_naissance()))

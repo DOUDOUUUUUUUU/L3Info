@@ -38,7 +38,7 @@ def solution_equation(a:float,b:float,c:float)->str:
         message += "Pas de racine réelles"
     return message
         
-def equation(a:float,b:float,c:float)->str:
+def equation(a:float,b:float,c:float)->None:
     print("solution de l'équation :",str_equation(a,b,c))
     delta = discriminant(a,b,c)
     if delta == 0:

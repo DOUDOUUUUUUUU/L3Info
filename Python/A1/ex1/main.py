@@ -22,4 +22,4 @@ def message_imc(imc:float)->str:
     return message
 
 if (__name__ == "__main__"):
-    print(message_imc(40))
+    print(message_imc(42))
