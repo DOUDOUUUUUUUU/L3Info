@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def histo(lst_func:list)->list:
+def histo(lst_func:list)->list: # [1, 2, 3 , 4, 5, 6]
     try:
         lst_hist = [0] * len(lst_func)
         for e in lst_func:
@@ -35,9 +35,11 @@ def est_bijective(lst_func:list)->bool:
 
 
 def aff_histo(lst_func:list)->None:
+    
     MAX_VAL = max(lst_func)
     
     hist = histo(lst_func)
+    
     max_val = MAX_VAL + 1 # iterator
     whitespace = ""
     
@@ -82,5 +84,6 @@ if (__name__ == '__main__'):
     list2 = [1,2,3,4,5,6,5,3,1,7,8,9,0]
     list4 = [0, 2, 4, 4, 6, 6, 6, 8, 8, 8, 8, 7]
     aff_histo2(list4) 
+    #histo([])
     """ if (est_bijective(histo(list1))):
         print("Cette fonction est donc bijective") """
