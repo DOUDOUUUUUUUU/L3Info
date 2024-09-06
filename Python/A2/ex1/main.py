@@ -112,10 +112,10 @@ def val_max(lst:list)->int:
     '''retourne la valeur max de la liste'''
     max = -inf
     if (not len(lst)):
-        return 0
-    for i in lst:
-        if (i > max):
-            max = i
+        raise ValueError
+    for e in lst:
+        if (e > max):
+            max = e
     return max
 
 def test_exercice5():
