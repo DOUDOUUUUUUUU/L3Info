@@ -12,7 +12,7 @@ def full_name(arg:str)->str:
         raise NameError
 
 
-def is_mail(arg:str)->tuple[int, int]:
+def is_mail(arg:str)->tuple[int, int]:              #TODO
     i = 0
     if ('@' not in arg):
         return (0, 2)
