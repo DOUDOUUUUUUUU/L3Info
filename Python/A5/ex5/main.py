@@ -1,15 +1,23 @@
 from time import *
 from random import *
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
+import numpy as np
 
 def gen_list_random_int(nb:int=10, min:int=0, max:int=10):
     if (min >= max):
         raise ValueError
     return [randint(min, max-1) for i in range(nb)]
 
+
+
+
+
+
 def mix_list(lst_to_mix:list)->list:
     if (not lst_to_mix):
         raise ValueError
+    if (len(lst_to_mix) == 1):
+        return lst_to_mix
     new_lst = []
     cache = []
     while len(cache) != len(lst_to_mix):
@@ -20,6 +28,13 @@ def mix_list(lst_to_mix:list)->list:
     if (new_lst == lst_to_mix):
         return mix_list(lst_to_mix)
     return new_lst
+
+
+
+
+
+
+
 
 def extract_elements_list(lst:list, n:int)->list:
     new_list = []
@@ -36,6 +51,13 @@ def extract_elements_list(lst:list, n:int)->list:
             i += 1
     
     return new_list
+
+
+
+
+
+
+
 
 def perf_mix(func1:callable, func2:callable, lst_len:list, n:int)->tuple[list, list]:
     t_start, t_end = 0, 0
@@ -100,3 +122,8 @@ if (__name__ == "__main__"):
     
     pass
 
+""" 
+6.47 append x2
+6.71 += [element]
+
+"""
